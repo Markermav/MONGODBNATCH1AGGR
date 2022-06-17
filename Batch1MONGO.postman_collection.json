@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "42581527-86c9-44ed-89fb-db2f7cea7d5e",
+		"name": "Batch1MONGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20722862"
+	},
+	"item": [
+		{
+			"name": "FETCH DATA FROM MONGODB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fetchall",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fetchall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST PEOPLE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Harikrishna\",\r\n        \"desc\": \"Scene after outside American clear eat maintain.\",\r\n        \"country\": \"Solomon Islands\",\r\n        \"familymembers\": 6\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aggregation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/agr",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"agr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Rajaram\",\r\n    \"desc\": \"Fine tree not. Create ask yard us reduce.\",\r\n    \"countryavv\": \"australia\",\r\n    \"familymembers\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/people/50",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"people",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE PEOPLE",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 49,\r\n        \"name\": \"Anupam\",\r\n        \"desc\": \"Husband forget reason star.\",\r\n        \"country\": \"Andorra\",\r\n        \"familymembers\": 8\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/people/49",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"people",
+						"49"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
