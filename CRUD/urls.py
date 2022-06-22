@@ -14,7 +14,12 @@ urlpatterns = [
 
     path('people/<int:id>', views.people_details, name='people_details'),
 
-    path('agr', views.aggregate_people, name='agr')
+    path('agr', views.aggregate_people, name='agr'),
+
+    path('operation', views.search_api, name='operation'),
+
+
+
 
 ]
 

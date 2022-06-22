@@ -12,7 +12,7 @@ class Command(BaseCommand):
         
         faker = Faker()
 
-        for _ in range(50):
+        for _ in range(100):
             People.objects.create(
                 name = faker.name(),
                 desc = faker.text(50),

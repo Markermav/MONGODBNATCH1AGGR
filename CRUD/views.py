@@ -11,10 +11,16 @@ from rest_framework.decorators import api_view
 
 from django.db.models import Avg, Min, Max, Sum, Count
 
+from django.db.models import Q
 
 from .models import *
 from .serializers import *
+import math
 # Create your views here.
+
+
+
+
 
 @api_view(['GET'])
 def home(request):
@@ -80,3 +86,31 @@ def aggregate_people(request):
     'Minimum Value': min[ "familymembers__min"],
     'Maximum Value': max["familymembers__max"]
     }, status=status.HTTP_206_PARTIAL_CONTENT)
+
+
+
+@api_view(['GET'])
+def search_api(request):
+
+    searchVar = request.GET.get('search')
+
+    sortVar = request.GET.get('sort')
+
+    people = People.objects.all()
+
+    if searchVar:
+        people = people.filter(Q(name__icontains = searchVar) | Q(desc__icontains = searchVar)  )
+
+    if sortVar == 'asc':
+        people = people.order_by('familymembers')
+
+    elif sortVar == 'desc':
+        people = people.order_by('-familymembers')    
+
+
+    serilizedata = PeopleSerializer(people, many=True)
+
+    return Response(serilizedata.data)
+
+
+
